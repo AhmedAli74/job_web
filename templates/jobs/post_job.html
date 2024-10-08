@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<div class="container d-flex justify-content-center align-items-center" style="min-height: 100vh;">
+    <div class="col-md-6">
+        <div class="wow fadeInUp" data-wow-delay="0.5s">
+            <form action="" method="POST" enctype="multipart/form-data">
+                <div class="row g-3">
+                    {% csrf_token %}
+                    <div class="col-md-6 mb-3">
+                        <div class="form-floating">
+                            <input type="text" class="form-control" id="name" placeholder="Name of job" name="name">
+                            <label for="name">Name of Job</label>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <div class="form-group">
+                            <label for="image">Upload Image</label>
+                            <input type="file" class="form-control-file" id="image" name="image">
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <div class="form-floating">
+                            <input type="text" class="form-control" placeholder="Place" name="place">
+                            <label for="email">Place</label>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <div class="form-group">
+                            <label for="job-type">Job Type</label>
+                            <select id="job-type" class="form-control" name="job_type">
+                                <option value="full-time">Full-time</option>
+                                <option value="part-time">Part-time</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <div class="form-floating">
+                            <input type="text" class="form-control" id="salary" placeholder="Salary" name="salary">
+                            <label for="salary">Salary</label>
+                        </div>
+                    </div>
+                    <!-- الحقل الخامس والسادس في نفس السطر -->
+                    <div class="col-md-6 mb-3">
+                        <div class="form-floating">
+                            <input type="text" class="form-control" id="vacancy" placeholder="Vacancy" name="vacancy">
+                            <label for="vacancy">Vacancy</label>
+                        </div>
+                    </div>
+
+                    <!-- الحقل السابع (وحده في سطر) -->
+                    <div class="col-12 mb-3">
+                        <div class="form-floating">
+                            <textarea class="form-control" placeholder="Leave a description here" id="description" style="height: 150px" name="description"></textarea>
+                            <label for="description">Description</label>
+                        </div>
+                    </div>
+
+                    <!-- الحقل الثامن (وحده في سطر) -->
+                    <div class="col-12 mb-3">
+                        <div class="form-floating">
+                            <textarea class="form-control" placeholder="Leave a qualifications here" id="qualifications" style="height: 150px" name="qualifications"></textarea>
+                            <label for="qualifications">Qualifications</label>
+                        </div>
+                    </div>
+
+                    <!-- زر الإرسال (وحده في سطر) -->
+                    <div class="col-12">
+                        <button class="btn btn-primary w-100 py-3" type="submit">Post A Job</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock body %}
